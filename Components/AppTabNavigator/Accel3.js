@@ -74,27 +74,23 @@ export default class AccelerometerSensor extends React.Component {
   // JSON.stringify(dataObj)  saves object as string
   saveData = () => {
     let dataObj = {
-      name: 'dataObjs.name is jason',
-      data: 'dataObj.data is 42',
+      data: this.state.accelerometerData,
     }
     AsyncStorage.setItem('dataObj', JSON.stringify(dataObj));
   }
-  // JSON.stringify(dataObj)  saves object as string
   displayData = async () => {
     try {
       let dataObj = await AsyncStorage.getItem('dataObj');
       alert(dataObj)  // { name: 'dataObj dataObj dataObj\' name',
                       //   data: 'dataObj dataObj dataObj',
                       // }
-    // optionally parse
-    let parsed = JSON.parse(dataObj)
-    alert(parsed.name)
+    // // optionally parse
+    // let parsed = JSON.parse(dataObj)
+    // alert(parsed.name)
     } catch (error) {
       alert(error);
     }
   }
-
-
 
   // // JSON.stringify(dataObj)  saves object as string
   // saveData = () => {
@@ -104,7 +100,6 @@ export default class AccelerometerSensor extends React.Component {
   //   }
   //   AsyncStorage.setItem('dataObj', JSON.stringify(dataObj));
   // }
-  // // JSON.stringify(dataObj)  saves object as string
   // displayData = async () => {
   //   try {
   //     let dataObj = await AsyncStorage.getItem('dataObj');
@@ -125,7 +120,6 @@ export default class AccelerometerSensor extends React.Component {
   //   let dataArr = [1,2,3,4,11]
   //   AsyncStorage.setItem('dataArr', JSON.stringify(dataArr));
   // }
-  // // JSON.stringify(arr)  saves arr as string
   // displayData = async () => {
   //   try {
   //     let dataArr = await AsyncStorage.getItem('dataArr');
@@ -200,7 +194,6 @@ function round(n) {
   if (!n) {
     return 0;
   }
-
   return Math.floor(n * 100) / 100;
 }
 
