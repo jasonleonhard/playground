@@ -3638,9 +3638,9 @@ native-base-shoutem-theme@0.2.2:
     lodash "^4.10.1"
     prop-types "^15.5.10"
 
-native-base@^2.3.7:
-  version "2.3.10"
-  resolved "https://registry.yarnpkg.com/native-base/-/native-base-2.3.10.tgz#01f0e9b1ab5f4fcd3b9c04b19743d589fa444176"
+native-base@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/native-base/-/native-base-2.4.1.tgz#2fca37b85a0a0f631c647c6be6837e879c9a9c82"
   dependencies:
     blueimp-md5 "^2.5.0"
     clamp "^1.0.1"
@@ -4328,7 +4328,7 @@ promzard@^0.3.0:
   dependencies:
     read "1"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -4572,6 +4572,12 @@ react-native-vector-icons@~4.4.2:
     lodash "^4.0.0"
     prop-types "^15.5.10"
     yargs "^8.0.2"
+
+react-native-websocket@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-websocket/-/react-native-websocket-1.0.2.tgz#5f9f57c6adcfd6163e4480207302d161bb602315"
+  dependencies:
+    prop-types "^15.6.1"
 
 "react-native@https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz":
   version "0.52.0"

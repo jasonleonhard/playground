@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, TouchableHighlight, View} from "react-native";
 import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base';
 import api from '../api';
 import ChatToggler from './ChatToggler';
@@ -27,6 +27,12 @@ class CardComponent extends Component {
       }).catch(error => console.log(error))
     }
 
+    onPress = () => {
+      this.setState({
+        counter: this.state.counter+1
+      })
+    }
+
     render() {
         const images = {
             "1": require('../assets/feed_images/1.jpg'),
@@ -41,46 +47,46 @@ class CardComponent extends Component {
             "10": require('../assets/feed_images/10.jpg')
         }
 
+        var dateFormat = require('dateformat');
+        var now = new Date();
+        // var today = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
+        var today = dateFormat(now, "dddd, mmmm dS, yyyy");
+
         return (
             <Card>
                 <CardItem>
                     <Left>
-                        <Thumbnail source={require('../assets/me.png')} />
+                        <Thumbnail style={styles.frame} source={require('../assets/me.png')} />
                         <Body>
                             <Text>Jason </Text>
-                            <Text note>March 18, 2018</Text>
+                            {/* <Text note>March 18, 2018</Text> */}
+                            <Text style={styles.date} note>{today}</Text>
                         </Body>
                     </Left>
                 </CardItem>
                 <CardItem cardBody>
-                    <Image source={images[this.props.imageSource]} style={{ height: 200, width: null, flex: 1 }} />
+                  {/* <TouchableHighlight
+                          style={styles.button}
+                          onPress={this.onPress}
+                         >
+                    <Text> Touch Here {this.state.counter} </Text>
+                  </TouchableHighlight> */}
+                  <Image source={images[this.props.imageSource]} style={styles.imgFlex} />
                 </CardItem>
-                <CardItem style={{ height: 40}}>
+                <CardItem style={styles.h40}>
                     <Left>
-                        {/* <Button transparent> */}
-                            <HeartToggler></HeartToggler>
-                        {/* </Button> */}
-                        {/* <Button transparent> */}
-                            <ChatToggler></ChatToggler>
-                        {/* </Button> */}
-                        {/* <Button transparent> */}
-                            <SendToggler></SendToggler>
-                        {/* </Button> */}
-                        {/* <Button transparent> */}
-                            <HeartToggler></HeartToggler>
-                        {/* </Button> */}
+                        <HeartToggler></HeartToggler>
+                        <ChatToggler></ChatToggler>
+                        <SendToggler></SendToggler>
+                        <HeartToggler></HeartToggler>
                         <Trois/>
                     </Left>
                 </CardItem>
                 <CardItem>
                     <Body>
                         <Text>
-                            <Text style={{ fontWeight: "900" }}>
-                                {this.state.user}
-                            </Text>
-                            <Text style={{ fontWeight: "500" }}>
-                                {' ' + this.state.text}
-                            </Text>
+                            <Text style={styles.fw900}>{this.state.user}</Text>
+                            <Text style={styles.fw500}>{' ' + this.state.text}</Text>
                         </Text>
                     </Body>
                 </CardItem>
@@ -95,5 +101,48 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    date: {
+        // flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'grey',
+        fontSize: '11%',
+    },
+    counter: {
+        // flex: 1,
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // color: 'grey',
+        // fontSize: '10%',
+    },
+    h40: {
+      height: 40,
+    },
+    fw900: {
+      fontWeight: "900",
+    },
+    fw500: {
+      fontWeight: "500",
+      fontSize: 13,
+    },
+    imgFlex: {
+      height: 200,
+      width: null,
+      flex: 1,
+      // borderRadius: 4,
+      // borderWidth: 4.5,
+      // borderColor: '#d6d7da',
+    },
+    rad: {
+      borderRadius: 4,
+      borderWidth: 44.5,
+      // borderColor: '#d6d7da',
+      borderColor: 'red',
+    },
+    frame: {
+      // borderRadius: 4,
+      borderWidth: 1,
+      borderColor: '#d6d7da',
     }
 });

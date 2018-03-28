@@ -31,7 +31,7 @@ class Toggler extends Component {
           <Button transparent>
               <TouchableOpacity onPress={this.dingo.bind(this)} >
                   <Icon name="ios-heart-outline" style={{color: 'grey'}}>
-                    <Text>{this.state.counter}</Text>
+                    <Text style={styles.shrink}>{this.state.counter}</Text>
                   </Icon>
               </TouchableOpacity>
           </Button>
@@ -43,6 +43,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white'
+    },
+    shrink: {
+      fontSize: 11,
     }
 });
 

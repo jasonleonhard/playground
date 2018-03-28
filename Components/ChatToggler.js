@@ -11,7 +11,7 @@ class ChatToggler extends Component {
       }
     }
 
-    dingo = () => {
+    stateToggler = () => {
       if (this.state.tf == 0) {
         this.setState({counter: this.state.counter+1})
         this.setState({tf: this.state.tf+1})
@@ -25,10 +25,9 @@ class ChatToggler extends Component {
     render() {
         return (
           <Button transparent>
-              <TouchableOpacity onPress={this.dingo.bind(this)} >
-                  {/* <Icon name="ios-heart-outline" style={{color: 'grey'}}> */}
+              <TouchableOpacity onPress={this.stateToggler.bind(this)} >
                   <Icon name="ios-chatbubbles-outline" style={{color: 'grey'}}>
-                    <Text>{this.state.counter}</Text>
+                    <Text style={styles.shrink}>{this.state.counter}</Text>
                   </Icon>
               </TouchableOpacity>
           </Button>
@@ -40,6 +39,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white'
+    },
+    shrink: {
+      fontSize: 11,
     }
 });
 

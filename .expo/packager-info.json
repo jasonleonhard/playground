@@ -1,8 +1,8 @@
 {
-  "expoServerNgrokUrl": "https://fe-uix.jasonleonhard.playground.exp.direct",
-  "packagerNgrokUrl": "https://packager.fe-uix.jasonleonhard.playground.exp.direct",
-  "ngrokPid": 19545,
+  "expoServerNgrokUrl": "https://ap-79f.jasonleonhard.playground.exp.direct",
+  "packagerNgrokUrl": "https://packager.ap-79f.jasonleonhard.playground.exp.direct",
+  "ngrokPid": 42814,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 19501
+  "packagerPort": 19002,
+  "packagerPid": 42788
 }

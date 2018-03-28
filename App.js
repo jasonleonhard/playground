@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation'
 import MainScreen from './Components/MainScreen'
+// import HomeScreen from './Components/AppTabNavigator/HomeScreen'
 
 export default class App extends React.Component {
   render() {
@@ -14,7 +15,10 @@ export default class App extends React.Component {
 const AppStackNavigator = StackNavigator({
   Main: {
     screen: MainScreen
-  }
+  },
+  // HomeScreen: {
+  //   screen: HomeScreen
+  // }
 })
 
 const styles = StyleSheet.create({

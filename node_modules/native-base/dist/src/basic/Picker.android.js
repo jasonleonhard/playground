@@ -17,7 +17,7 @@ this.props.children));
 
 PickerNB.Item=(0,_createReactClass2.default)({displayName:"Item",
 render:function render(){
-return _react2.default.createElement(_reactNative.Picker.Item,_extends({},this.props(),{__source:{fileName:_jsxFileName,lineNumber:20}}));
+return _react2.default.createElement(_reactNative.Picker.Item,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:20}}));
 }});
 
 
@@ -25,7 +25,11 @@ PickerNB.propTypes=_extends({},
 _reactNative.Picker.propTypes);
 
 
-var StyledPickerNB=(0,_nativeBaseShoutemTheme.connectStyle)("NativeBase.PickerNB",{},_mapPropsToStyleNames2.default)(PickerNB);exports.
+var StyledPickerNB=(0,_nativeBaseShoutemTheme.connectStyle)(
+"NativeBase.PickerNB",
+{},_mapPropsToStyleNames2.default)(
+
+PickerNB);exports.
 
 PickerNB=StyledPickerNB;
 //# sourceMappingURL=Picker.android.js.map

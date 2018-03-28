@@ -1,11 +1,8 @@
-// after
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Icon } from 'native-base'
 import Trois from '../Trois'
-
 import Expo from 'expo';
-// import React from 'react';
 import * as THREE from 'three';
 import ExpoTHREE from 'expo-three'; // 2.2.2-alpha.1
 
@@ -48,21 +45,17 @@ class LikesTab extends Component {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     //  NOTE: How to create an Expo-compatible THREE texture
     const texture = await ExpoTHREE.loadAsync(
-      // require('./assets/icons/app-icon.png')
       require('../../assets/me.png')
     );
     const material = new THREE.MeshBasicMaterial({ map: texture });
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
-
     camera.position.z = 5;
 
     const render = () => {
       requestAnimationFrame(render);
-
       cube.rotation.x += 0.07;
       cube.rotation.y += 0.04;
-
       renderer.render(scene, camera);
 
       // NOTE: At the end of each frame, notify `Expo.GLView` with the below
@@ -81,36 +74,3 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     }
 });
-
-////////////////////////////////////////////////////////////////////////////////
-//// before
-// import React, { Component } from "react";
-// import { View, Text, StyleSheet } from "react-native";
-// import { Icon } from 'native-base'
-// import Trois from '../Trois'
-//
-// class LikesTab extends Component {
-//     static navigationOptions = {
-//         tabBarIcon: ({ tintColor }) => (
-//             <Icon name="ios-heart" style={{ color: tintColor }} />
-//         )
-//     }
-//
-//     render() {
-//         return (
-//             <View style={styles.container}>
-//                 <Text>LikesTab</Text>
-//                 <Trois/>
-//             </View>
-//         );
-//     }
-// }
-// export default LikesTab;
-//
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'center'
-//     }
-// });
