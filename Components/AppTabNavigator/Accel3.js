@@ -16,7 +16,11 @@ export default class AccelerometerSensor extends React.Component {
     accelerometerData: {},
     text: '',
     storedValue: '',
+    xArr: [],
+    yArr: [],
+    zArr: [],
   }
+
   componentWillMount() {
     this.onLoad();
   }
@@ -30,21 +34,11 @@ export default class AccelerometerSensor extends React.Component {
     } catch (error) {
       Alert.alert('Error', 'while loading data');
     }
-  }
-  onChange = (text) => {
-    this.setState({ text });
-  }
-  onSave = async () => {
-    const { text } = this.state;
-    try {
-      await AsyncStorage.setItem(key, text);
-      Alert.alert('Saved', 'locally to device');
-    } catch (error) {
-      Alert.alert('Error', 'while saving data');
+  if (this._subscription) {
+      this._unsubscribe();
+    } else {
+      this._subscribe();
     }
-  }
-  componentWillUnmount() {
-    this._unsubscribe();
   }
   _toggle = () => {
     if (this._subscription) {
@@ -65,84 +59,72 @@ export default class AccelerometerSensor extends React.Component {
   _subscribe = () => {
     this._subscription = Accelerometer.addListener(accelerometerData => {
       this.setState({ accelerometerData });
+      this.setState({ accelerometerData });
     });
   }
   _unsubscribe = () => {
     this._subscription && this._subscription.remove();
     this._subscription = null;
   }
-  // JSON.stringify(dataObj)  saves object as string
+  // JSON.stringify(obj)  saves object as string
   saveData = () => {
-    let dataObj = {
+    let obj = {
       data: this.state.accelerometerData,
     }
-    AsyncStorage.setItem('dataObj', JSON.stringify(dataObj));
+    AsyncStorage.setItem('obj', JSON.stringify(obj));
   }
   displayData = async () => {
     try {
-      let dataObj = await AsyncStorage.getItem('dataObj');
-      alert(dataObj)  // { name: 'dataObj dataObj dataObj\' name',
-                      //   data: 'dataObj dataObj dataObj',
-                      // }
-    // // optionally parse
-    // let parsed = JSON.parse(dataObj)
-    // alert(parsed.name)
+      let obj = await AsyncStorage.getItem('obj');
+      alert(obj) // { data: .... , x: ... }
+      // let parsed = JSON.parse(obj)
     } catch (error) {
       alert(error);
     }
   }
 
-  // // JSON.stringify(dataObj)  saves object as string
-  // saveData = () => {
-  //   let dataObj = {
-  //     name: 'dataObjs.name is jason',
-  //     data: 'dataObj.data is 42',
-  //   }
-  //   AsyncStorage.setItem('dataObj', JSON.stringify(dataObj));
-  // }
-  // displayData = async () => {
-  //   try {
-  //     let dataObj = await AsyncStorage.getItem('dataObj');
-  //     alert(dataObj)  // { name: 'dataObj dataObj dataObj\' name',
-  //                     //   data: 'dataObj dataObj dataObj',
-  //                     // }
-  //   // optionally parse
-  //   let parsed = JSON.parse(dataObj)
-  //   alert(parsed.name)
-  //   }
-  //   catch (error) {
-  //     alert(error);
-  //   }
-  // }
+  // different
+  displayDataInline = async () => {
+    try {
+      let obj = await AsyncStorage.getItem('obj');
+      let parsed = JSON.parse(obj)
 
-  // // JSON.stringify(arr)  saves arr as string
-  // saveData = () => {
-  //   let dataArr = [1,2,3,4,11]
-  //   AsyncStorage.setItem('dataArr', JSON.stringify(dataArr));
-  // }
-  // displayData = async () => {
-  //   try {
-  //     let dataArr = await AsyncStorage.getItem('dataArr');
-  //     alert(dataArr) // [1,2,3,4,11]
-  //
-  //     // optionally parse
-  //     let parsed = JSON.parse(dataArr)
-  //     alert(parsed) // 1,2,3,4,11  // no []
-  //     alert(parsed[2]) // 3
-  //   }
-  //   catch (error) {
-  //     alert(error);
-  //   }
-  // }
+      let xRounded = round(parsed.data.x)
+      let xStr = JSON.stringify(xRounded)
+      this.state.xArr.push(xRounded)
+      this.state.xArr.push(', ')
+      // alert(xRounded) // works
+
+      let yRounded = round(parsed.data.y)
+      let yStr = JSON.stringify(yRounded)
+      this.state.yArr.push(yRounded)
+      this.state.yArr.push(', ')
+      // alert(yRounded) // works
+
+      let zRounded = round(parsed.data.z)
+      let zStr = JSON.stringify(zRounded)
+      this.state.zArr.push(zRounded)
+      this.state.zArr.push(', ')
+      // alert(zRounded) // works
+    } catch (error) {
+      alert(error);
+    }
+  }
 
   render() {
     let { x, y, z } = this.state.accelerometerData;
+    // alert(x); // over and over
+
+    // let { xA, yA, zA } = this.state.accelerometerData;
     const { storedValue, text } = this.state;
     return (
       <View style={styles.container}>
         <View style={styles.sensor}>
           <Text style={styles.text}>Accelerometer:</Text>
-          <Text style={styles.text}>x: {round(x)} y: {round(y)} z: {round(z)}</Text>
+          {/* <Text style={styles.text}>x: {round(x)} y: {round(y)} z: {round(z)}</Text> */}
+          <Text style={styles.text}>x: {round(x)}</Text>
+          <Text style={styles.text}>y: {round(y)}</Text>
+          <Text style={styles.text}>z: {round(z)}</Text>
 
           {/* section */}
           <View style={styles.buttonContainer}>
@@ -166,24 +148,23 @@ export default class AccelerometerSensor extends React.Component {
               <Text style={styles.text}>Click to save</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={this.displayData} style={styles.button}>
-              <Text style={styles.text}>Click to display</Text>
+              <Text style={styles.text}>Click to display alert</Text>
+            </TouchableOpacity>
+            {/* saved arr values section */}
+            <TouchableOpacity onPress={this.displayDataInline} style={styles.button}>
+              <Text style={styles.text}>Click to display inline</Text>
             </TouchableOpacity>
           </View>
+          <TouchableOpacity>
+            <Text style={styles.text}>Locally Saved Array Data</Text>
+            <Text style={styles.bold}>xArr: </Text>
+            <Text style={styles.text}>{this.state.xArr}</Text>
+            <Text style={styles.bold}>yArr: </Text>
+            <Text style={styles.text}>{this.state.yArr}</Text>
+            <Text style={styles.bold}>zArr: </Text>
+            <Text style={styles.text}>{this.state.zArr}</Text>
+          </TouchableOpacity>
 
-          {/* section idk */}
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={this.onSave} style={styles.button}>
-              <Text style={styles.text}>Click to onSave?</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={this.onLoad} style={styles.button}>
-              <Text style={styles.text}>Click to onLoad?</Text>
-            </TouchableOpacity>
-          </View>
-          <TextInput onChangeText={this.onChange}
-                     value={text}
-                     placeholder="placeholder text"
-                     style={styles.input} />
-         <Text style={styles.text}>{storedValue}</Text>
         </View>
       </View>
     );
@@ -237,4 +218,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1.0,
     shadowOffset: {  width: 3,  height: 3,  },
   },
+  bold: {
+    fontWeight: 'bold',
+  }
 });
