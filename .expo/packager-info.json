@@ -1,8 +1,8 @@
 {
-  "expoServerNgrokUrl": "https://ap-79f.jasonleonhard.playground.exp.direct",
-  "packagerNgrokUrl": "https://packager.ap-79f.jasonleonhard.playground.exp.direct",
-  "ngrokPid": 54655,
-  "expoServerPort": 19000,
-  "packagerPort": 19002,
-  "packagerPid": 54630
+  "expoServerPort": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+  "packagerPort": null,
+  "packagerPid": null
 }
