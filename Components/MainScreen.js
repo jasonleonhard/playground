@@ -1,29 +1,30 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Platform } from "react-native";
-// import HomeTab from './AppTabNavigator/HomeTab'
-// import SearchTab from './AppTabNavigator/SearchTab'
-// import SearchTab2 from './AppTabNavigator/SearchTab2'
-// import FetchMovieData from './AppTabNavigator/FetchMovieData'
-// import FetchMovieData2 from './AppTabNavigator/FetchMovieData2'
-// import DatePick from './AppTabNavigator/DatePick'
-// import ModalExample from './AppTabNavigator/ModalExample'
-// import FlexTab from './AppTabNavigator/FlexTab'
-// import AddMediaTab from './AppTabNavigator/AddMediaTab'
-// import LikesTab from './AppTabNavigator/LikesTab'
-// import ProfileTab from './AppTabNavigator/ProfileTab'
-// import ExperimentTab from './AppTabNavigator/ExperimentTab'
-// import TextInputExample from './AppTabNavigator/TextInputExample'
-// import PropPic from './AppTabNavigator/PropPic'
-// import AnimateApi from './AppTabNavigator/AnimateApi'
-// import Accel from './AppTabNavigator/Accel'
-// import Accel2 from './AppTabNavigator/Accel2'
-// import Accel3 from './AppTabNavigator/Accel3'
-// import Accel4 from './AppTabNavigator/Accel4'
-// import Accel5 from './AppTabNavigator/Accel5'
-// import RandData from './AppTabNavigator/RandData'
-// import RandDataC3 from './AppTabNavigator/RandDataC3'
+
+import HomeTab from './AppTabNavigator/HomeTab'
+import Menu from './Menu'
+
+import SearchTab from './AppTabNavigator/SearchTab'
+import SearchTab2 from './AppTabNavigator/SearchTab2'
+import FetchMovieData from './AppTabNavigator/FetchMovieData'
+import FetchMovieData2 from './AppTabNavigator/FetchMovieData2'
+import DatePick from './AppTabNavigator/DatePick'
+import ModalExample from './AppTabNavigator/ModalExample'
+import FlexTab from './AppTabNavigator/FlexTab'
+import AddMediaTab from './AppTabNavigator/AddMediaTab'
+import LikesTab from './AppTabNavigator/LikesTab'
+import ProfileTab from './AppTabNavigator/ProfileTab'
+import ExperimentTab from './AppTabNavigator/ExperimentTab'
+import TextInputExample from './AppTabNavigator/TextInputExample'
+import PropPic from './AppTabNavigator/PropPic'
+import AnimateApi from './AppTabNavigator/AnimateApi'
+import Accel from './AppTabNavigator/Accel'
+import Accel2 from './AppTabNavigator/Accel2'
+import Accel3 from './AppTabNavigator/Accel3'
+import Accel4 from './AppTabNavigator/Accel4'
+import Accel5 from './AppTabNavigator/Accel5'
+import RandData from './AppTabNavigator/RandData'
 import DragMe from './AppTabNavigator/DragMe'
-import Pedometer from './AppTabNavigator/Pedometer'
 import MultiCounter from './AppTabNavigator/MultiCounter'
 import SqliteExample from './AppTabNavigator/SqliteExample'
 import MapViewExample from './AppTabNavigator/MapViewExample'
@@ -40,11 +41,19 @@ import Flexy6 from './AppTabNavigator/Flexy6'
 import Flexy7 from './AppTabNavigator/Flexy7'
 import Flexy8 from './AppTabNavigator/Flexy8'
 
-import ListThumbnailNativeBase from './AppTabNavigator/ListThumbnailNativeBase'
-// import ListThumbnailNativeBase2 from './AppTabNavigator/ListThumbnailNativeBase2'
+// import RandDataC3 from './AppTabNavigator/RandDataC3'
+// import Pedometer from './AppTabNavigator/Pedometer'
 
 // import ChartSvg from './AppTabNavigator/ChartSvg'
-// import Chat from './AppTabNavigator/Chat'
+import Chat from './AppTabNavigator/Chat'
+
+
+
+// import ListThumbnailNativeBase from './AppTabNavigator/ListThumbnailNativeBase'
+// import ListThumbnailNativeBase2 from './AppTabNavigator/ListThumbnailNativeBase2'
+
+
+
 import { TabNavigator } from 'react-navigation'
 import { Icon } from 'native-base'
 
@@ -64,136 +73,153 @@ class MainScreen extends Component {
 export default MainScreen;
 
 const AppTabNavigator = TabNavigator({
-  Flexy8: {
-      screen: Flexy8
+
+// work and using
+Chat: {
+    screen: Chat
+},
+SqliteExample: {
+    screen: SqliteExample
+},
+
+
+  Menu: {
+      screen: Menu
   },
-  Flexy7: {
-      screen: Flexy7
+
+  HomeTab: { // ideally first but for dev not..
+      screen: HomeTab
   },
-  Flexy6: {
-      screen: Flexy6
-  },
-  Flexy5: {
-      screen: Flexy5
-  },
-  Flexy4: {
-      screen: Flexy4
-  },
-  Flexy3: {
-      screen: Flexy3
-  },
-  Flexy2: {
-      screen: Flexy2
-  },
-  Flexy: {
-      screen: Flexy
-  },
-  Blank: {
-      screen: Blank
-  },
-  Pedometer: {
-      screen: Pedometer
-  },
+  //
+  // Flexy8: {
+  //     screen: Flexy8
+  // },
+  // Flexy4: {
+  //     screen: Flexy4
+  // },
+  //
+// work but not using
+  // Flexy7: {
+  //     screen: Flexy7
+  // },
+  // Flexy6: {
+  //     screen: Flexy6
+  // },
+  // Flexy5: {
+  //     screen: Flexy5
+  // },
+  // Flexy3: {
+  //     screen: Flexy3
+  // },
+  // Flexy2: {
+  //     screen: Flexy2
+  // },
+  // Flexy: {
+  //     screen: Flexy
+  // },
+  // Blank: {
+  //     screen: Blank
+  // },
+  // Pedometer: {
+  //     screen: Pedometer
+  // },
   DragMe: {
       screen: DragMe
   },
   MultiCounter: {
       screen: MultiCounter
   },
-  SqliteExample: {
-      screen: SqliteExample
-  },
-  ListThumbnailNativeBase: {
-      screen: ListThumbnailNativeBase
-  },
+  // ListThumbnailNativeBase: {
+  //     screen: ListThumbnailNativeBase
+  // },
+
   // ListThumbnailNativeBase2: {
   //     screen: ListThumbnailNativeBase2
   // },
-  // MapViewExample: {
-  //     screen: MapViewExample
-  // },
-  // Lottie2: {
-  //     screen: Lottie2
-  // },
-  // Lottie: {
-  //     screen: Lottie
-  // },
+  MapViewExample: {
+      screen: MapViewExample
+  },
+  Lottie2: {
+      screen: Lottie2
+  },
+  Lottie: {
+      screen: Lottie
+  },
 
+
+    // RandData: {
+    //     screen: RandData
+    // },
 
     // RandDataC3: {
     //     screen: RandDataC3
     // },
-    //
 
-    // Accel5: {
-    //     screen: Accel5
-    // },
-    // RandData: {
-    //     screen: RandData
-    // },
-    // Accel4: {
-    //     screen: Accel4
-    // },
+
+    Accel5: {
+        screen: Accel5
+    },
+
+    Accel4: {
+        screen: Accel4
+    },
     // ChartSvg: {
     //     screen: ChartSvg
     // },
-    // Accel3: {
-    //     screen: Accel3
-    // },
-    // Accel2: {
-    //     screen: Accel2
-    // },
-    // Accel: {
-    //     screen: Accel
-    // },
-    // Chat: {
-    //     screen: Chat
-    // },
-    // AnimateApi: {
-    //     screen: AnimateApi
-    // },
-    // PropPic: {
-    //     screen: PropPic
-    // },
-    // ModalExample: {
-    //     screen: ModalExample
-    // },
-    // DatePick: {
-    //     screen: DatePick
-    // },
-    // FetchMovieData: {
-    //     screen: FetchMovieData
-    // },
-    // FetchMovieData2: {
-    //     screen: FetchMovieData2
-    // },
-    // SearchTab2: {
-    //     screen: SearchTab2
-    // },
-    // SearchTab: {
-    //     screen: SearchTab
-    // },
-    // FlexTab: {
-    //     screen: FlexTab
-    // },
-    // TextInputExample: {
-    //     screen: TextInputExample
-    // },
-    // HomeTab: { // ideally first but for dev not..
-    //     screen: HomeTab
-    // },
-    // AddMediaTab: {
-    //     screen: AddMediaTab
-    // },
-    // LikesTab: {
-    //     screen: LikesTab
-    // },
-    // ProfileTab: {
-    //     screen: ProfileTab
-    // },
-    // ExperimentTab: {
-    //     screen: ExperimentTab
-    // }
+    Accel3: {
+        screen: Accel3
+    },
+    Accel2: {
+        screen: Accel2
+    },
+    Accel: {
+        screen: Accel
+    },
+
+    AnimateApi: {
+        screen: AnimateApi
+    },
+    PropPic: {
+        screen: PropPic
+    },
+    ModalExample: {
+        screen: ModalExample
+    },
+    DatePick: {
+        screen: DatePick
+    },
+    FetchMovieData: {
+        screen: FetchMovieData
+    },
+    FetchMovieData2: {
+        screen: FetchMovieData2
+    },
+    SearchTab2: {
+        screen: SearchTab2
+    },
+    SearchTab: {
+        screen: SearchTab
+    },
+    FlexTab: {
+        screen: FlexTab
+    },
+    TextInputExample: {
+        screen: TextInputExample
+    },
+
+    AddMediaTab: {
+        screen: AddMediaTab
+    },
+    LikesTab: {
+        screen: LikesTab
+    },
+    ProfileTab: {
+        screen: ProfileTab
+    },
+    ExperimentTab: {
+        screen: ExperimentTab
+    }
+
     }, {
         animationEnabled: true,
         swipeEnabled: true,

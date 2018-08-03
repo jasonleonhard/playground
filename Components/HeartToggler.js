@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Button, Icon } from 'native-base';
 
 class HeartToggler extends Component {
@@ -11,7 +11,7 @@ class HeartToggler extends Component {
       }
     }
 
-    dingo = () => {
+    voted = () => {
       if (this.state.tf == 0) {
         this.setState({counter: this.state.counter+1})
         this.setState({tf: this.state.tf+1})
@@ -25,7 +25,7 @@ class HeartToggler extends Component {
     render() {
         return (
           <Button transparent>
-              <TouchableOpacity onPress={this.dingo.bind(this)} >
+              <TouchableOpacity onPress={this.voted.bind(this)} >
                   <Icon name="ios-heart-outline" style={{color: 'grey'}}>
                     <Text style={styles.shrink}>{this.state.counter}</Text>
                   </Icon>

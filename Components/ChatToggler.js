@@ -1,6 +1,12 @@
 import React, { Component } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {
+  // Image,
+  StyleSheet, Text, TouchableOpacity,
+  // View
+} from "react-native";
 import { Button, Icon } from 'native-base';
+
+// import Voted from './Voted'
 
 class ChatToggler extends Component {
     constructor(props){
@@ -11,7 +17,7 @@ class ChatToggler extends Component {
       }
     }
 
-    stateToggler = () => {
+    voted = () => {
       if (this.state.tf == 0) {
         this.setState({counter: this.state.counter+1})
         this.setState({tf: this.state.tf+1})
@@ -25,7 +31,7 @@ class ChatToggler extends Component {
     render() {
         return (
           <Button transparent>
-              <TouchableOpacity onPress={this.stateToggler.bind(this)} >
+              <TouchableOpacity onPress={this.voted.bind(this)} >
                   <Icon name="ios-chatbubbles-outline" style={{color: 'grey'}}>
                     <Text style={styles.shrink}>{this.state.counter}</Text>
                   </Icon>

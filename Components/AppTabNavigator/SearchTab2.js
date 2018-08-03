@@ -14,7 +14,7 @@ export default class Movie extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>bla</Text>
+        <Text>Here is an example video</Text>
 
         <Video
           source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}

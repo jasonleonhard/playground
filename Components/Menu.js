@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import {
-  // View, Text, 
-  StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { Container, Content, Icon } from 'native-base'
-import CardComponent from '../CardComponent'
+import CardComponent from './CardComponent'
 
-class HomeTab extends Component {
+class Menu extends Component {
     static navigationOptions = {
         tabBarIcon: ({ tintColor }) => (
             <Icon name="ios-home" style={{ color: tintColor }} />
@@ -14,8 +12,12 @@ class HomeTab extends Component {
 
     render() {
         return (
+
             <Container style={styles.container}>
                 <Content>
+                  {/* <View>
+                    <Text>sdjfkdsf</Text>
+                  </View> */}
                   <CardComponent imageSource="1" likes="121" />
                   <CardComponent imageSource="2" likes="42" />
                   <CardComponent imageSource="3" likes="69" />
@@ -30,7 +32,7 @@ class HomeTab extends Component {
         );
     }
 }
-export default HomeTab;
+export default Menu;
 
 const styles = StyleSheet.create({
     container: {
