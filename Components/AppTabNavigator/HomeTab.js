@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  // View, Text, 
+  // View, Text,
   StyleSheet } from "react-native";
 import { Container, Content, Icon } from 'native-base'
 import CardComponent from '../CardComponent'
