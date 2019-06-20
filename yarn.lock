@@ -5781,10 +5781,10 @@ react-proxy@^1.1.7:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
 
-react-rt-chart@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/react-rt-chart/-/react-rt-chart-1.3.0.tgz#779e73f2dea4ba285fd708570d2942746a6ca770"
-  integrity sha1-d55z8t6kuihf1whXDSlCdGpsp3A=
+react-rt-chart@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-rt-chart/-/react-rt-chart-2.0.0.tgz#56bd9c034d0e2acf0a7de552bd617d18d7f83919"
+  integrity sha512-i1qqdSYYSwyyfkRaK0h5U0F5BoMaztTU4aXuiNHIaLf0ELanQ1VLyJ3C9FHK5W170K9v2GX85XnIZQUXZCyFqg==
   dependencies:
     babel-polyfill "^6.2.0"
     c3 "^0.4.10"
