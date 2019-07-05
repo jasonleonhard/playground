@@ -4,7 +4,6 @@ import { Button, Icon } from 'native-base';
 // import { View, Text, StyleSheet } from "react-native";
 // import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base';
 // import { Container, Content, Icon } from 'native-base'
-// import CardComponent from '../CardComponent'
 
 class Toggler extends Component {
     constructor(props){

@@ -47,10 +47,10 @@ class CardComponent extends Component {
             "10": require('../assets/feed_images/10.jpg')
         }
 
-        var dateFormat = require('dateformat');
-        var now = new Date();
+        // var dateFormat = require('dateformat');
+        // var now = new Date();
         // var today = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
-        var today = dateFormat(now, "dddd, mmmm dS, yyyy");
+        // var today = dateFormat(now, "dddd, mmmm dS, yyyy");
 
         return (
             <Card>
@@ -60,7 +60,7 @@ class CardComponent extends Component {
                         <Body>
                             <Text>Jason </Text>
                             {/* <Text note>March 18, 2018</Text> */}
-                            <Text style={styles.date} note>{today}</Text>
+                            {/* <Text style={styles.date} note>{today}</Text> */}
                         </Body>
                     </Left>
                 </CardItem>
