@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Icon } from 'native-base'
 import Trois from '../Trois'
-import Expo from 'expo';
+// import Expo from 'expo';
+import * as Expo from "expo"
 import * as THREE from 'three';
 import ExpoTHREE from 'expo-three'; // 2.2.2-alpha.1
 

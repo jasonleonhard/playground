@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Files from './Files';
-import Expo from 'expo';
+// import Expo from 'expo';
+import * as Expo from "expo"
 import { Group, Node, Sprite, SpriteView } from './GameKit';
 import { THREE } from 'expo-three' // 2.1.1
 import "expo-asset-utils"; // 0.0.0
