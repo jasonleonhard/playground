@@ -1,9 +1,9 @@
 {
-  "expoServerPort": null,
-  "expoServerNgrokUrl": "https://ev-gu6.jasonleonhard.playground.exp.direct",
-  "packagerNgrokUrl": "https://packager.ev-gu6.jasonleonhard.playground.exp.direct",
-  "ngrokPid": 58377,
-  "packagerPort": null,
-  "packagerPid": null,
+  "expoServerPort": 19000,
+  "expoServerNgrokUrl": "https://ev-gu6.anonymous.playground.exp.direct",
+  "packagerNgrokUrl": "https://packager.ev-gu6.anonymous.playground.exp.direct",
+  "ngrokPid": 88563,
+  "packagerPort": 19001,
+  "packagerPid": 88553,
   "devToolsPort": 19002
 }
