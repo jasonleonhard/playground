@@ -9,7 +9,7 @@
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
     "native-base": "^2.4.1",
-    "npm": "^5.7.1",
+    "npm": "^6.10.2",
     "react": "16.2.0",
     "react-apollo": "^2.1.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
