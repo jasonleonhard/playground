@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "apollo-boost": "^0.1.4",
-    "expo": "^25.0.0",
+    "expo": "^39.0.5",
     "expo-graphics": "^0.0.3",
     "expo-three": "^2.2.2-alpha.1",
     "graphql": "^0.13.2",
