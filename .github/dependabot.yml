@@ -1,0 +1,27 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: expo
+    versions:
+    - 40.0.1
+    - 41.0.0
+  - dependency-name: expo-three
+    versions:
+    - 5.5.1
+    - 5.6.2
+  - dependency-name: three
+    versions:
+    - 0.125.2
+    - 0.126.0
+  - dependency-name: react-navigation
+    versions:
+    - 4.4.3
+  - dependency-name: graphql
+    versions:
+    - 15.3.0
